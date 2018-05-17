@@ -1,0 +1,1 @@
+D:\_My\Git\SeaBattle\Battle\Battle\bin\Debug\Battle.exe.config
