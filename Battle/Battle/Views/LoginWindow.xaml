@@ -14,9 +14,9 @@
     <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" >
         <DockPanel Margin="10">
             <Label>Your Login :</Label>
-            <TextBox Width="150" Height="30" Text="{Binding Source={StaticResource Res}, Path=Login}" ></TextBox>
+            <TextBox Width="150" Height="30" Name="logintb" Text="{Binding Source={StaticResource Res}, Path=Login, Mode=TwoWay}" ></TextBox>
         </DockPanel>
-        <Button Width="120" Height="30" Margin="10" Content="Play VS Computer" Command="{Binding Source= {StaticResource Res}, Path=VScomputer}"/>
-        <Button Width="120" Height="30" Margin="10" Content="Play Vs Player" Command="{Binding Source= {StaticResource Res}, Path=VSplayer}"/>
+        <Button Width="120" Height="30" Margin="10" Content="Play VS Computer" Command="{Binding Source= {StaticResource Res}, Path=VScomputer}" CommandParameter="{Binding ElementName=logintb, Path=Text}"/>
+        <Button Width="120" Height="30" Margin="10" Content="Play Vs Player" Command="{Binding Source= {StaticResource Res}, Path=VSplayer}" CommandParameter="{Binding ElementName=logintb, Path=Text}"/>
     </StackPanel>
 </Window>

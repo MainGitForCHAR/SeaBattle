@@ -14,10 +14,18 @@ namespace Battle.ViewModels
         {
             VSplayer = new Commands(_VSplayer, CanPlay);
             VScomputer = new Commands(_VScomputer, CanPlay);
+            login = "";
         }
 
-        
-        public string Login { get; set; }
+
+        private string login;
+
+        public string Login
+        {
+            get { return login; }
+            set { login = value;}
+        }
+
         public ICommand VSplayer { get; set; }
         public ICommand VScomputer { get; set; }
 
@@ -33,7 +41,8 @@ namespace Battle.ViewModels
 
         private bool CanPlay(object arg)
         {
-            return !string.IsNullOrEmpty(Login) && Login.Length > 3;
+            var s = arg as string;
+            return !string.IsNullOrEmpty(s) && s.Length > 3;
         }
     }
 }
